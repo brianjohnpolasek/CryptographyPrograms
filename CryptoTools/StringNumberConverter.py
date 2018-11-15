@@ -5,14 +5,15 @@ def StrToNum(string):
 		#~ print ord(s) # for testing
 		if 65 <= ord(s) <= 90:
 			temp = ord(s) - 65
+			numbers.append(temp)
 		if 97 <= ord(s) <= 122:
 			temp = ord(s) - 97
-			#~ print ('Temp: ' + str(temp)) # for testing
+			numbers.append(temp)
 		else:
-			print (str(s) + ' was ignored.')
+			print (str(s) + ' was ignored or converted.')
 			pass
 		
-		numbers.append(temp)
+		
 			
 	return numbers
 	
