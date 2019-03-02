@@ -14,9 +14,9 @@ def DiffSquares(N):
 		return [0]
 	
 	a = result[0]
-	print a
+	print('a = ' + str(a))
 	b = result[1]
-	print b
+	print('a = ' + str(b))
 	
 	p = b - a
 	q = a + b

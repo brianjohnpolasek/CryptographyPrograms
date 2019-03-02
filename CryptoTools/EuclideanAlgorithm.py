@@ -1,3 +1,7 @@
+'''
+Computes gcd(a, b)
+'''
+
 def EuclideanAlgorithm(a, b):
 	#continue to divide a by be until remainder is 0
 	if a == 0:
