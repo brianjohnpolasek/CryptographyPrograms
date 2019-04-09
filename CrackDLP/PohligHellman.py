@@ -3,6 +3,14 @@ sys.path.insert(0, '../CryptoTools')
 from Factor import Factor
 from ChineseRemainderTheorem import ChineseRemainderTheorem
 
+'''
+Process:
+1. Factor p-1 into small primes Q = q1, .. qi
+2. Find Ni = (p - 1) / qi
+3. Compute g^(Ni * x) = h^(Ni) mod p
+4. Use CRT to find x
+'''
+
 def PohligHellman(g, a, p):
 	# Factor p-1 into q1, .. qi
 	Q = []	# small primes 	
@@ -43,12 +51,3 @@ def PohligHellmanIO():
 
 if __name__ == '__main__':
     PohligHellmanIO()
-
-
-'''
-Process:
-1. Factor p-1 into small primes Q = q1, .. qi
-2. Find Ni = (p - 1) / qi
-3. Compute g^(Ni * x) = h^(Ni) mod p
-4. Use CRT to find x
-'''

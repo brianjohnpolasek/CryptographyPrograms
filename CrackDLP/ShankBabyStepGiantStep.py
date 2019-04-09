@@ -4,6 +4,15 @@ sys.path.insert(0, '../CryptoTools')
 
 from ModInverse import ModInv
 
+'''
+Process:
+1. let n = 1 + floor( sqrt(N) )
+2. Generate Baby List: {1, g^1, g^2, ... g^n}
+3. Generate Giant List: {a, a * g^-n, a* g^-2n, ... a * g^-n^2}
+4. find a match between the two lists
+5. The result for a match "g^i = a * g^-j*n" will be "x = j*n + i"
+'''
+
 def Shank(g, a, N):
 	# calculate index number
 	n = int(1 + math.floor( math.sqrt(N) ))
@@ -40,7 +49,3 @@ def ShankIO():
 if __name__ == '__main__':
     ShankIO()
 
-'''
-Process:
-1. let n = 1 + floor( sqrt(N) )
-'''
