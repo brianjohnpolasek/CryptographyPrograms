@@ -41,13 +41,27 @@ def findExp(g, a, p):
 		
 
 def PohligHellmanIO():
-	g = input('g: ')
-	a = input('a: ')
-	p = input('p: ')
+	g = int(input('g: '))
+	a = int(input('a: '))
+	p = int(input('p: '))
 
 	x = PohligHellman(g, a, p)
 
 	print('The value of x is: ' + str(x))
 
 if __name__ == '__main__':
-    PohligHellmanIO()
+	print('------------------------')
+	print('Pohlig-Hellman Algorithm')
+	print('------------------------')
+
+	if len(sys.argv) > 3:
+		g = int(sys.argv[1])
+		a = int(sys.argv[2])
+		p = int(sys.argv[3])
+
+		x = PohligHellman(g, a, p)
+
+		print('The value of x is: ' + str(x))
+
+	else:
+		PohligHellmanIO()

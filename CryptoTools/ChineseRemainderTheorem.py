@@ -49,11 +49,11 @@ def ChineseRemainderTheoremIO():
 	outN = []
 
 
-	inC = raw_input('Please enter the known congruences, seperated by spaces: ')
+	inC = int(input('Please enter the known congruences, seperated by spaces: '))
 
 	matchC = re.findall('[^ ]+', str(inC))
 
-	inN = raw_input('Please enter the modulos, separated by spcases:')
+	inN = int(input('Please enter the modulos, separated by spcases:'))
 
 	matchN = re.findall('[^ ]+', inN)
 
@@ -70,4 +70,17 @@ def ChineseRemainderTheoremIO():
 	print('The value of x is: ' + str(x))
 
 if __name__ == '__main__':
-    ChineseRemainderTheoremIO()
+	print('-----------------------------------')
+	print('Chinese Remainder Theorem Algorithm')
+	print('-----------------------------------')
+
+	if len(sys.argv) > 2:
+		C = int(sys.argv[1])
+		N = int(sys.argv[2])
+		x = ChineseRemainderTheorem(C, N)
+
+		print('The value of x is: ' + str(x))
+
+		printSolution(p, N)
+	else:
+		ChineseRemainderTheoremIO()

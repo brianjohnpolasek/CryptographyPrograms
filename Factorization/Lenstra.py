@@ -6,11 +6,14 @@ from EuclideanAlgorithm import EuclideanAlgorithm
 from ExtendedEuclidean import ExtendedEuclid
 from ModInverse import ModInv
 
-# Input E over field N where E is y^2 = x^3 + A*x + B and P is point on E
-# 1. determine if P is on E
-# 2. Like pollard, compute 2P, 3P = 2P + P, 4P = 2P + 2P ...
-# 3. If gcd(N, [n]*P) >= 1, return the result as p
-# 4. q = N / p
+'''
+Process:
+Input E over field N where E is y^2 = x^3 + A*x + B and P is point on E
+1. determine if P is on E
+2. Like pollard, compute 2P, 3P = 2P + P, 4P = 2P + 2P ...
+3. If gcd(N, [n]*P) >= 1, return the result as p
+4. q = N / p
+'''
 
 # determines slope for use in "pointAddition"
 def computeLambda(E, P, Q, N):

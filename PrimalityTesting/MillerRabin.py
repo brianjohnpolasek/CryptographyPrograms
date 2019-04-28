@@ -51,9 +51,8 @@ def MillerRabinIO():
 	print("-------------------------------")
 	print("Miller-Rabin Test for Primality")
 	print("-------------------------------")
-	n = input("Please enter an integer larger than two that you would like to test for primality: ")
 
-	n = int(n)
+	n = int(input("Please enter an integer larger than two that you would like to test for primality: "))
 
 	if (n <= 2):
 		print("The number must be larger than 2")

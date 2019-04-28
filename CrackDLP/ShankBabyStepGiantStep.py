@@ -38,14 +38,28 @@ def Shank(g, a, N):
 	return None		
 
 def ShankIO():
-	g = input('g: ')
-	a = input('a: ')
-	N = input('N: ')
+	g = int(input('g: '))
+	a = int(input('a: '))
+	N = int(input('N: '))
 
 	x = Shank(g, a, N)
 
 	print('The value of x is: ' + str(x))
 
 if __name__ == '__main__':
-    ShankIO()
+	print('-------------------------------------')
+	print('Shank\s Baby Step Giant Step Algorithm')
+	print('-------------------------------------')
+
+	if len(sys.argv) > 3:
+		g = int(sys.argv[1])
+		a = int(sys.argv[2])
+		N = int(sys.argv[3])
+
+		x = Shank(g, a, N)
+
+		print('The value of x is: ' + str(x))	
+
+	else:
+		ShankIO()
 
