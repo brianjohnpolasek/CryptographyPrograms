@@ -1,6 +1,7 @@
 import sys
 sys.path.insert(0, '../CryptoTools')
 from EuclideanAlgorithm import EuclideanAlgorithm
+from FastPoweringAlgorithm import FastPower
 
 def gcd(a,b):
 	if (b == 0):
@@ -32,11 +33,16 @@ def MillerRabin(n):
 	
 	print("a: " + str(a))
 
-	if a ** q % n == 1:
+	a = FastPower(a, q, n)
+
+	print("a: " + str(a))
+
+	if a == 1:
 		print("Test failed")
 
 	for i in range(0, k-1):
-		if (a ** i) % n == -1:
+		a = FastPower(a, i, n)
+		if a == -1:
 			print("Test failed")
 
 	print(str(n) + " is Composite")
@@ -45,7 +51,7 @@ def MillerRabinIO():
 	print("-------------------------------")
 	print("Miller-Rabin Test for Primality")
 	print("-------------------------------")
-	n = input("Please enter an integer lqarger than two that you would like to test for primality: ")
+	n = input("Please enter an integer larger than two that you would like to test for primality: ")
 
 	n = int(n)
 
